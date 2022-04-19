@@ -1,0 +1,22 @@
+version: "3.4"
+
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: pytest
+
+
+  flake:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: flake8 --config .flake8
+
+
+  mypy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: mypy {{cookiecutter.package_name}}

@@ -1,0 +1,6 @@
+[flake8]
+max-line-length = {{cookiecutter.line_length}}
+max-complexity = 10
+format = pylint
+show-source = True
+statistics = True

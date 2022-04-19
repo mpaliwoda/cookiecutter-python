@@ -1,0 +1,8 @@
+{
+    "project_name": "Hello world",
+    "package_name": "{{cookiecutter.project_name|lower|replace(' ', '_')}}",
+    "description": "Sample python package",
+    "line_length": 88,
+    "add_coverage": ["y", "n"],
+    "add_test_dockerfile": ["y", "n"]
+}

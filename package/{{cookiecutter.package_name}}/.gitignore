@@ -1,0 +1,22 @@
+# ignore all dotfiles unless exception is explicitly set
+.*
+
+# add exceptions to dotfiles
+!.flake8
+!.gitignore
+!.dockerignore
+
+__pycache__/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+docs/_build/
+coverage.xml
+tags
