@@ -23,7 +23,7 @@ dev = [
 
 
 [tool.setuptools.dynamic]
-version = {attr = "{{cookiecutter.project_slug}}.VERSION"}
+version = {attr = "app.VERSION"}
 
 
 [tool.black]
