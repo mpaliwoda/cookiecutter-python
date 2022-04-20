@@ -11,7 +11,8 @@ Generates python package with:
 * `flake8` as linter
 * `mypy` as type checker
 * `black` as code formatter
-* Dockerfile and docker-compose.yml for running tests in isolated environment along with some helper scripts
+* `pyproject.toml` for specifying dependencies and tool settings (except flake8 which is configured in `.flake8` file)
+* Optionally, Dockerfile and docker-compose.yml for running tests in isolated environment along with some helper scripts
 * Optionally, pytest-cov for reporting test coverage
 
 
