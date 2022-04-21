@@ -9,7 +9,7 @@ Result = dict[str, Any]
 
 
 def check_service() -> tuple[bool, str]:
-    return True, "Service ok"
+    return True, "service ok"
 
 
 def success_handler(results: list[Result]) -> str:
@@ -36,6 +36,6 @@ def failure_handler(results: list[Result]) -> str:
     )
 
 
-health_check = HealthCheck(success_handler=success_handler, failure_handler=failure_handler)
+health_check = HealthCheck(success_handler=success_handler, failed_handler=failure_handler)
 
 health_check.add_check(check_service)

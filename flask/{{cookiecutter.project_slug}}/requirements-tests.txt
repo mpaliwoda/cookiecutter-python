@@ -1,0 +1,4 @@
+flake8==4.0.1
+mypy==0.942
+pytest==7.1.1
+{% if cookiecutter.add_coverage == "y" %}pytest-cov==3.0.0{% endif %}
