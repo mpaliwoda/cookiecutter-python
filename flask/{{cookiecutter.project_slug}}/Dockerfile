@@ -1,0 +1,23 @@
+FROM python:3.10 AS builder
+
+COPY requirements.txt /
+
+RUN pip wheel --wheel-dir /wheels -r /requirements.txt && \
+    rm -rf /root/.cache
+
+FROM python:3.10-slim
+
+RUN groupadd -r --gid 10001 developers && \
+    useradd -r -g developers -u 20001 dev && \
+    mkdir /usr/src/app && \
+    chown -R dev:developers /usr/src/app
+
+COPY --from=builder /wheels /wheels
+
+RUN pip install --no-index --find-links=/wheels /wheels/*.whl && rm -rf /wheels
+
+USER dev
+
+WORKDIR /usr/src/app
+
+COPY . /usr/src/app

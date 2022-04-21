@@ -1,7 +1,9 @@
 import pytest
 
 
-@pytest.mark.parametrize("name,expected_message", [(None, "Hello world"), ("duck", "Hello duck")])
+@pytest.mark.parametrize(
+    "name,expected_message", [(None, "Hello world"), ("duck", "Hello duck")]
+)
 def test_{{cookiecutter.project_slug}}_returns_correct_response_based_on_params(
     test_client,
     name,

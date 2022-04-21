@@ -3,9 +3,8 @@ from http import HTTPStatus
 from app.api.v1 import {{cookiecutter.project_slug}} as {{cookiecutter.project_slug}}_v1
 from app.extensions.health import health_check
 from pydantic import ValidationError
-from werkzeug.wrappers.response import Response
 
-from flask import Flask, jsonify
+from flask import Flask
 
 
 def create_app(testing: bool = False) -> Flask:
@@ -23,7 +22,3 @@ def create_app(testing: bool = False) -> Flask:
         return error.json(), HTTPStatus.BAD_REQUEST
 
     return app
-
-
-if __name__ == "__main__":
-    app = create_app()

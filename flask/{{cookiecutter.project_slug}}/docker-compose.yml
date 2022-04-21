@@ -1,0 +1,21 @@
+version: "3.4"
+
+
+x-environment-config: &environment-config
+  env_file:
+    - .env
+
+
+services:
+  {{cookiecutter.project_slug}}:
+    <<: *environment-config
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: gunicorn service:app
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/usr/src/app
+

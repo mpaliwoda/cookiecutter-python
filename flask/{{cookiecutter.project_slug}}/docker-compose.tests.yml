@@ -1,0 +1,22 @@
+version: "3.4"
+
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile-tests
+    command: pytest
+
+
+  flake:
+    build:
+      context: .
+      dockerfile: Dockerfile-tests
+    command: flake8 --config .flake8
+
+
+  mypy:
+    build:
+      context: .
+      dockerfile: Dockerfile-tests
+    command: mypy app
