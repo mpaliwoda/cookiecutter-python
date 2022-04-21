@@ -1,5 +1,5 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Extra
 
 
-class HelloQueryParameters(BaseModel):
+class HelloQueryParameters(BaseModel, extra=Extra.forbid):
     name: str = "world"

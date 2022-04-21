@@ -36,6 +36,8 @@ def failure_handler(results: list[Result]) -> str:
     )
 
 
-health_check = HealthCheck(success_handler=success_handler, failed_handler=failure_handler)
+health_check = HealthCheck(
+    success_handler=success_handler, failed_handler=failure_handler
+)
 
 health_check.add_check(check_service)
