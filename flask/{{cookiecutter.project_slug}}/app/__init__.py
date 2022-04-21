@@ -1,4 +1,4 @@
-from app.api.v1 import hello as hello_v1
+from app.api.v1 import {{cookiecutter.project_slug}} as {{cookiecutter.project_slug}}_v1
 from app.extensions.health import health_check
 
 from flask import Flask
@@ -11,8 +11,10 @@ def create_app(testing: bool = False) -> Flask:
 
     app.testing = testing
 
-    app.register_blueprint(hello_v1.blueprint, url_prefix="/api/v1/hello")
+    app.url_map.strict_slashes = False
+
     app.add_url_rule("/health", "healthcheck", view_func=lambda: health_check.run())
+    app.register_blueprint({{cookiecutter.project_slug}}_v1.blueprint, url_prefix="/api/v1/{{cookiecutter.project_slug}}")
 
     return app
 
